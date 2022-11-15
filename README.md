@@ -9,14 +9,14 @@ With GitHub Actions, you can quickly and easily automate your software workflows
 * Trigger builds to quickly identify breaking changes and create testable debug builds
 * Continuously run tests to identify and eliminate bugs, improving code quality 
 * Automatically build, sign, package and deploy branches that pass CI 
-
+ 
 Build, test, and deploy your code entirely within GitHub.
 
 | Workflow | Status |
 |----------|--------|
-| WPF - CI | ![ci](https://github.com/microsoft/github-actions-for-desktop-apps/workflows/Wpf%20Continuous%20Integration/badge.svg) |
-| WPF - CD | ![cd](https://github.com/microsoft/github-actions-for-desktop-apps/workflows/Wpf%20Continuous%20Delivery/badge.svg) |
-| WPF - CI (.NET 6 experimental) | [![NET 6.0 CI (temporary)](https://github.com/microsoft/github-actions-for-desktop-apps/actions/workflows/ci-net6-temp.yml/badge.svg)](https://github.com/microsoft/github-actions-for-desktop-apps/actions/workflows/ci-net6-temp.yml) |
+| WPF - CI | ![ci](https://github.com/mookie_jones/github-actions-for-desktop-apps/workflows/Wpf%20Continuous%20Integration/badge.svg) |
+| WPF - CD | ![cd](https://github.com/mookiejones/github-actions-for-desktop-apps/workflows/Wpf%20Continuous%20Delivery/badge.svg) |
+| WPF - CI (.NET 6 experimental) | [![NET 6.0 CI (temporary)](https://github.com/mookiejones/github-actions-for-desktop-apps/actions/workflows/ci-net6-temp.yml/badge.svg)](https://github.com/mookiejones/github-actions-for-desktop-apps/actions/workflows/ci-net6-temp.yml) |
 
 ## Workflows
 
@@ -47,14 +47,14 @@ The CI workflow defines the Package.Identity.Name in the Windows Application Pac
     Version="0.0.1.0" />
 ```
 
-On every push to the repo, take advantage of the [setup-dotnet](https://github.com/actions/setup-dotnet "Setup dotnet GitHub Action") GitHub Action and install the [dotnet core cli](https://github.com/dotnet/cli "DotNet Core CLI page") environment. Then add [MSBuild](https://github.com/microsoft/setup-msbuild "MSBuild GitHub Action page") to the PATH and execute unit tests using the [dotnet test](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test "DotNet test page") runner console application.
+On every push to the repo, take advantage of the [setup-dotnet](https://github.com/actions/setup-dotnet "Setup dotnet GitHub Action") GitHub Action and install the [dotnet core cli](https://github.com/dotnet/cli "DotNet Core CLI page") environment. Then add [MSBuild](https://github.com/mookiejones/setup-msbuild "MSBuild GitHub Action page") to the PATH and execute unit tests using the [dotnet test](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test "DotNet test page") runner console application.
 ```yaml
     - name: Install .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.100
 
-    # Add  MsBuild to the PATH: https://github.com/microsoft/setup-msbuild
+    # Add  MsBuild to the PATH: https://github.com/mookiejones/setup-msbuild
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.0
       
@@ -373,4 +373,4 @@ To learn more about other GitHub Actions that you can add to your pipelines, tak
 
 We are always open to your feedback.  Please feel free to email us at [devdeploymenttools@microsoft.com](mailto:devdeploymenttools@microsoft.com "Email us at devdeploymenttools at Microsoft.com").
 
-Our repo is open source and welcomes contributions and suggestions.  Please see [Contributing.md](https://github.com/microsoft/github-actions-for-desktop-apps/blob/master/CONTRIBUTING.md "Contributing.md page") for more information on how to submit a PR to the repo.
+Our repo is open source and welcomes contributions and suggestions.  Please see [Contributing.md](https://github.com/mookiejones/github-actions-for-desktop-apps/blob/master/CONTRIBUTING.md "Contributing.md page") for more information on how to submit a PR to the repo.
