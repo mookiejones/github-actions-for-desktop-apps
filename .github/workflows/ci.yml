@@ -14,7 +14,7 @@ on:
   pull_request:
     branches:
       - main
-       
+
 jobs:
 
   build:
@@ -27,7 +27,7 @@ jobs:
 
     env:
       App_Packages_Directory: AppPackages
-      SigningCertificate: GitHubActionsDemo.pfx
+      SigningCertificate: MyWPFApp.Package_TemporaryKey.pfx
       Solution_Path: MyWpfApp.sln
       Test_Project_Path: MyWpfApp.Tests\MyWpfApp.Tests.csproj
       Wpf_Project_Path: MyWpfApp\MyWpfApp.csproj
@@ -75,7 +75,7 @@ jobs:
         RuntimeIdentifier: win-${{ matrix.targetplatform }}
 
     # Decode the Base64 encoded Pfx
-    - name: Decode the Pfx 
+    - name: Decode the Pfx
       run: |
         $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
         $currentDirectory = Get-Location
